@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+    <meta lang="en">
+    <meta charset="utf-8">
+     <!-- to make the website scale -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+<!-- css for the fonts, using adobe font. Instead of using lucida grande as this requires copyright and license purchasing, I am using Myriad instead as the fonts are very similar -->
+<link rel="stylesheet" href="https://use.typekit.net/ufc2tkb.css">
+
+<!-- font awesome css for icons -->        
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+        
+        <!-- W3 schools bootstrap 4 CDN -->     
+        
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<!-- project css after bootstrap, as the bootstrap styling must override the styling implimented by me-->
+<link rel="stylesheet" href="project.css">
+        
+    <title>The Big CO2 Project</title> <!--title displayed on tab-->
+
+</head> <!--end of head-->
+    
+<body>
+    <!-- To remove the extra padding I put a p-0 class in the container fluid class that will wrap around all of the text-->
+    <div class="container-fluid p-0">
+        <div class="row"> 
+            <!-- changed the navbar styling to mitigate the white space issue. Now the navbar is larger and will stay at the top as you scroll through the website. The width is now 100.-->
+            <nav class="navbar navbar-expand-lg sticky-top w-100">
+               <!-- to ensure that the navigation bar is scalable, the justify content between has been added.-->
+               <a class="navbar-brand" href="index.html"> <img class="w-100" src="images/logo-active.png" title="The Big CO2 Project" alt="The Big CO2 Project" ></a> <!-- logo will be on the top left corner of the page -->
+                <!--hamburger menu for collapsing the menu bar, used the navbar-expand-lg class to create a functional hamburger menu-->
+                  <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                <div class="collapse navbar-collapse" id="mainNav"> 
+                  <ul class="navbar-nav justify-content-between w-100"> 
+                    <li class="nav-item"><a class="nav-link" href="monitor.html"> CO<sub>2</sub> Monitors</a></li>
+                    <li class="nav-item"><a class="nav-link" href="ventilation.html"> Ventilation</a>
+                    <li class="nav-item"><a class="active nav-link" href="climate.html"> Climate Change</a></li>
+                  </ul> <!-- end of unordered list for the navigation bar-->
+                </div> <!--end of the div-->
+                 
+             </nav> <!--end of the nav styling-->
+         </div> <!--end div for row-->
+
+         <h1>CLIMATE CHANGE</h1>
+         <header class="header-climate d-flex justify-content-center align-items-center"></header>
+         
+         
+         <h1>RESOURCES</h1>
+         <h4>Climate Change is an all-pressing issue. If you would like to join the fight against it, you can by looking through these websites:</h4>
+         <ul style="list-style-type:none;">
+          <li><a href="https://climate.nasa.gov/effects/">NASA</a></li>
+          <li><a href="https://www.nature.org/en-us/what-we-do/our-priorities/tackle-climate-change/climate-change-stories/climate-change-frequently-asked-questions/">Nature</a></li>
+          <li><a href="https://www.conservation.org/stories/11-climate-change-facts-you-need-to-know">Conservation</a></li>
+          <li><a href="https://science2017.globalchange.gov/">Climate Science Special Report</a></li>
+       </ul>
+
+
+   <footer> <!-- start of footer -->
+    <div class="row footer">
+        <div class="col-md-3">
+     <ul><h5>About Us</h5></ul>
+     <ul><h6>Our mission is to create a resource that informs the public about climate change, CO2 levels and room ventilation.</h6></ul> 
+         </div> <!--end div for col about us-->
+    
+        <div class="col-md-3">
+     <ul><h5>Privacy and Ethics</h5></ul>
+     <ul><h6>The Big CO2  Project does not collect user data, rather it displays data from a database that is accessible by the schools that are participating in this project, which they have consented to.</h6></ul> 
+         </div> <!--end div for privacy and ethics-->
+         
+       <div class="col-md-3">
+      <ul><h5>Copyright</h5></ul>
+      <ul><h6>This website was created by Shyamalima Shreya Das, supported from the Year 10s of St Hilda’s Collegiate School 2021 and Adon Moskal’s Research Group.</h6></ul> 
+        </div> <!--end div for col copyright-->
+
+        <div class="col-md-3">
+      <ul><h5>Sources</h5></ul>
+      <ul><h6><a href="https://learn.kaiterra.com/en/air-academy/carbon-dioxide-co2#atmospheric_co2_and_climate_change">Everything You Need To Know About Carbon Dioxide</a></h6></ul> 
+      <ul><h6><a href="https://www.dhs.wisconsin.gov/chemical/carbondioxide.htm#:~:text=Exposure%20to%20CO2%20can%20produce,coma%2C%20asphyxia%2C%20and%20convulsions">Wisconsin Department of Health</a></h6></ul>
+       </div> <!--end div for col sources-->
+
+   </div> <!-- end div for row footer-->
+   </footer> <!--end of footer-->
+
+   <!-- Script for the bootstrap at the end of the document, so the scripts load after the page has been loaded.-->
+   <!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> 
+
+</div> <!-- end of container fluid-->
+</body> <!--end of body-->
+</html> <!--end of html-->

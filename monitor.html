@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+    <meta lang="en">
+    <meta charset="utf-8">
+     <!-- to make the website scale -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+<!-- css for the fonts, using adobe font. Instead of using lucida grande as this requires copyright and license purchasing, I am using Myriad instead as the fonts are very similar -->
+<link rel="stylesheet" href="https://use.typekit.net/ufc2tkb.css">
+
+<!-- font awesome css for icons -->        
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+        
+        <!-- W3 schools bootstrap 4 CDN -->     
+        
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+
+<!-- project css after bootstrap, as the bootstrap styling must override the styling implimented by me-->
+<link rel="stylesheet" href="project.css">
+
+
+        
+    <title>The Big CO2 Project</title> <!--title displayed on tab-->
+
+</head> <!--end of head-->
+    
+<body>
+    <!-- To remove the extra padding I put a p-0 class in the container fluid class that will wrap around all of the text-->
+    <div class="container-fluid p-0">
+        <div class="row"> 
+            <!-- changed the navbar styling to mitigate the white space issue. Now the navbar is larger and will stay at the top as you scroll through the website. The width is now 100.-->
+            <nav class="navbar navbar-expand-lg sticky-top w-100">
+               <!-- to ensure that the navigation bar is scalable, the justify content between has been added.-->
+               <a class="navbar-brand" href="index.html"> <img class="w-100" src="images/logo-active.png" title="The Big CO2 Project" alt="The Big CO2 Project" ></a> <!-- logo will be on the top left corner of the page -->
+                <!--hamburger menu for collapsing the menu bar, used the navbar-expand-lg class to create a functional hamburger menu-->
+                  <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                <div class="collapse navbar-collapse" id="mainNav"> 
+                  <ul class="navbar-nav justify-content-between w-100"> 
+                    <li class="nav-item"><a class="active nav-link" href="monitor.html"> CO<sub>2</sub> Monitors</a></li>
+                    <li class="nav-item"><a class="nav-link" href="ventilation.html"> Ventilation</a>
+                    <li class="nav-item"><a class="nav-link" href="climate.html"> Climate Change</a></li>
+                  </ul> <!-- end of unordered list for the navigation bar-->
+                </div> <!--end of the div-->
+                 
+             </nav> <!--end of the nav styling-->
+         </div> <!--end div for row-->
+
+         <h1>C0<sub>2</sub> MONITORS</h1>
+<!--All vue directives must be inside the app div which is called in the JS-->
+         <h4>The CO<sub>2</sub> Monitors are shaped like icebergs, in which the colour will change from red, to yellow or to green depending on the CO<sub>2</sub> level, which is measured in parts per million. The sensors themselves are comprised with an Arduino board, connected to RGB LED, for the changing colour and a MH-Z19B sensor. For use, carefully connect the monitor through a USB interface, and keep it level. For more information, visit <a href="https://github.com/dfenders/specialproject/tree/master/Iceberg%20Device">Github for the Iceberg Device</a></h4>
+         
+         <div class="card-deck">
+         <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="images/iceberg.jpg" alt="Complete Iceberg Monitor">
+            </div>
+            <div class="flip-card-back">
+              <h1>Iceberg Monitor</h1>
+              <p>Will change between red, yellow and green to warn user about CO<sub>2</sub> levels</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="images/colour.png" alt="Table of PPM Values">
+            </div>
+            <div class="flip-card-back">
+              <h1>CO<sub>2</sub> Levels</h1>
+              <p>These are the ranges in which the CO<sub>2</sub> levels are safe or not.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="images/arduino.png" alt="Arduino Sensor">
+            </div>
+            <div class="flip-card-back">
+              <h1>Arduino CO<sub>2</sub> Monitor</h1>
+              <p>These are the ranges in which the CO<sub>2</sub> levels are safe or not.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="images/sensor.png" alt="MH-Z19B Sensor">
+            </div>
+            <div class="flip-card-back">
+              <h1>Connecting MH-Z19B Sensor </h1>
+              <p>Consolidate Arduino CO<sub>2</sub> Monitor picture to correctly match up wiring. This corresponds to the sensor for measuring CO<sub>2</sub> levels.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="images/RGB LED.png" alt="RGB LED Sensor">
+            </div>
+            <div class="flip-card-back">
+              <h1>Connecting RGB LED</h1>
+              <p>Consolidate Arduino CO<sub>2</sub> Monitor picture to correctly match up wiring. This corresponds to the RGB LED that shows you the colour range.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+        
+    <h1> Data from the CO<sub>2</sub> Monitors</h1>
+
+
+
+  <div id="app">
+    <div class="row d-flex justify-content-center">
+      <!--Use a vue for loop to get all the items form the database and make a card for each one-->
+        <div v-for="monitor in info" class="card col-md-3 m-2 border-dark">
+          <div class="card-body">
+            <!-- the name, ppm, time and temp content is pulled from the database dynamically and then formatted with bootstrap classes-->
+            <h5 class="card-title text-white bg-danger p-2 text-center" v-if="monitor.ppm>=1500">{{ monitor.name }}</h5>
+            <h5 class="card-title text-white bg-warning p-2 text-center" v-else-if="monitor.ppm>=1000">{{ monitor.name }}</h5>
+            <h5 class="card-title text-white bg-success p-2 text-center" v-else="monitor.ppm>0">{{ monitor.name }}</h5>
+
+              <p class="card-text"><strong> CO<sub>2</sub> PPM Reading: </strong> {{ monitor.ppm }} </p>
+              <p class="card-text"><strong> Temperature: </strong> {{ monitor.temp }} </p>
+              <p class="card-text"><strong> Time: </strong> {{ monitor.pTime }} </p>
+          </div> <!--end div for card body-->
+        </div> <!--end div for v-for statement -->
+    </div> <!--end div for row -->
+</div> <!--end of app id-->
+
+
+
+   <footer> <!-- start of footer -->
+    <div class="row footer">
+        <div class="col-md-3">
+     <ul><h5>About Us</h5></ul>
+     <ul><h6>Our mission is to create a resource that informs the public about climate change, CO2 levels and room ventilation.</h6></ul> 
+         </div> <!--end div for col about us-->
+    
+        <div class="col-md-3">
+     <ul><h5>Privacy and Ethics</h5></ul>
+     <ul><h6>The Big CO2  Project does not collect user data, rather it displays data from a database that is accessible by the schools that are participating in this project, which they have consented to.</h6></ul> 
+         </div> <!--end div for privacy and ethics-->
+         
+       <div class="col-md-3">
+      <ul><h5>Copyright</h5></ul>
+      <ul><h6>This website was created by Shyamalima Shreya Das, supported from the Year 10s of St Hilda’s Collegiate School 2021 and Adon Moskal’s Research Group.</h6></ul> 
+        </div> <!--end div for col copyright-->
+
+        <div class="col-md-3">
+      <ul><h5>Sources</h5></ul>
+      <ul><h6><a href="https://learn.kaiterra.com/en/air-academy/carbon-dioxide-co2#atmospheric_co2_and_climate_change">Everything You Need To Know About Carbon Dioxide</a></h6></ul> 
+      <ul><h6><a href="https://www.dhs.wisconsin.gov/chemical/carbondioxide.htm#:~:text=Exposure%20to%20CO2%20can%20produce,coma%2C%20asphyxia%2C%20and%20convulsions">Wisconsin Department of Health</a></h6></ul> 
+        </div> <!--end div for col sources-->
+
+   </div> <!-- end div for row footer-->
+   </footer> <!--end of footer-->
+
+   <!-- Script for the bootstrap at the end of the document, so the scripts load after the page has been loaded.-->
+   <!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> 
+
+<!-- JS for VUE and Airtable-->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.16.2/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+
+<script src="main_vue_database_api.js"></script>
+
+</div> <!-- end of container-->
+</body> <!--end of body-->
+</html> <!--end of html-->

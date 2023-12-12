@@ -1,0 +1,170 @@
+/* colour codes */
+/* navbar and footer #222826
+header and footer title text #E9F2F1
+footer text #B4D4D1
+headings body #60C977
+body text #056DB6
+*/
+
+/* equivalent for Futura font, for titles */
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@800&display=swap');
+/* font-family: 'Nunito Sans', sans-serif; */
+
+/* entire html page will be white, but if there are specific elements that need colour, those will be coloured */
+html {
+    background-color: white; 
+ }
+
+
+/* style the navigation bar */
+.navbar {
+  background-color: #222826;
+}
+
+/* navbar links, this applies to all of the links */
+.navbar a {
+  text-align: center;
+  color: #E9F2F1;
+  font-size: 2.5vw; /*scalable font*/
+}
+
+/* Navbar links on mouse-over */
+.navbar a:hover {
+  color: #056DB6;
+}
+
+/* current/active navbar link */
+a:active {
+  background-color: #222826;
+  color: #B4D4D1;
+}
+
+h1{
+  font-family: 'Nunito Sans', sans-serif;
+  color: #60C977;
+  text-align: center;
+}
+
+/*footer style*/
+footer {
+    width: 100%;
+    background-color: #222826;
+    color: #E9F2F1;
+    text-align: center;
+    padding: 1%; 
+    font-size: 2vw; /*scalable font*/
+}
+
+/* link in normal/defult state */
+.footer a {
+  color: #E9F2F1;
+  font-size: 1em; /*scalable font*/
+}
+
+/* link in hover state */
+.footer a:hover { 
+  color:#98B8B7;
+  text-decoration: underline;
+}
+
+ /*text in footer*/
+h6 {
+  color: #B4D4D1;
+  text-align: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+h3 {
+  color: #60C977;
+  text-align: center;
+}
+
+h4 {
+  color: #222826;
+  text-align: center;
+}
+
+ul {
+  color: #056DB6;
+  text-align: center;
+}
+
+/*landing page*/
+.header-landing {
+  background-image: url(images/main.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  min-height: 50vw;
+}
+
+
+.header-climate{
+  background-image: url(images/climate\ change\ infographic.jpg); /*infographic*/
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  min-height: 80vw; /*for scalability*/
+}
+
+.header-ventilation{
+  background-image: url(images/ventilation\ infographic.jpg); /*infographic*/
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  min-height: 90vw; /*for scalability*/
+}
+
+/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.flip-card {
+  background-color: white;
+  width: 250px;
+  height: 300px;
+  border: 1px solid #f1f1f1;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+  background-color: white;
+  color: black;
+}
+
+/* Style the back side */
+.flip-card-back {
+  background-color: dodgerblue;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.card-deck {
+  padding-left: 8vw;
+}
